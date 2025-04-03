@@ -1,5 +1,5 @@
-from file_video import AVI, MP4, MKV
-from database import Database
+from model.file_video import AVI, MP4, MKV
+from db.database import Database
 
 class DVR(Database):
     def __init__(self, directory):

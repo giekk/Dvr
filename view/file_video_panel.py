@@ -1,10 +1,11 @@
 from PyQt5.QtWidgets import QPushButton, QLabel, QWidget, QVBoxLayout, QHBoxLayout, QFrame
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, QSize, pyqtSignal
-from file_video import AVI, MP4, MKV
-from visitor import IconVisitor
 
-from constants import STANDARD_BUTTON_HEIGHT, STANDARD_BUTTON_WIDTH
+from model.file_video import AVI, MP4, MKV
+from model.visitor import IconVisitor
+
+from assets.constants import STANDARD_BUTTON_HEIGHT, STANDARD_BUTTON_WIDTH
 
 class FileVideoPanel(QWidget):
     riproduction = pyqtSignal(object)

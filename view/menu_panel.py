@@ -3,9 +3,9 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, QSize, pyqtSignal
 from view.add_library_dialog import AddLibraryDialog
 
-from constants import MENU_BUTTON_HEIGHT, MENU_BUTTON_WIDTH, STANDARD_BUTTON_WIDTH, STANDARD_BUTTON_HEIGHT
+from assets.constants import MENU_BUTTON_HEIGHT, MENU_BUTTON_WIDTH, STANDARD_BUTTON_WIDTH, STANDARD_BUTTON_HEIGHT
 
-class Menu(QWidget):
+class MenuPanel(QWidget):
     to_home = pyqtSignal()
     change_category = pyqtSignal(str)
     add_library_to_db = pyqtSignal(str)

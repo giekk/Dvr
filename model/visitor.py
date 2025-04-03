@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QPixmap
 
-from constants import FILE_AUDIO_IMG_HEIGHT, FILE_AUDIO_IMG_WIDTH
+from assets.constants import FILE_AUDIO_IMG_HEIGHT, FILE_AUDIO_IMG_WIDTH
 
 class Visitor(ABC):
     @abstractmethod

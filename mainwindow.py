@@ -1,16 +1,16 @@
 from PyQt5.QtWidgets import QVBoxLayout, QWidget, QMainWindow, QToolBar, QLabel
 from PyQt5.QtGui import QIcon, QColor, QWindow
 from PyQt5.QtCore import Qt
-from view.home import Home
+from view.home_view import HomeView
 from view.dvr_view import DvrView
 import ctypes
 
-from constants import MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT, DVR_WIDTH, DVR_HEIGHT, HOME_HEIGHT, HOME_WIDTH
+from assets.constants import MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT, DVR_WIDTH, DVR_HEIGHT, HOME_HEIGHT, HOME_WIDTH
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.home = Home()
+        self.home = HomeView()
         self.dvr_view = None
         self.initUI()
 

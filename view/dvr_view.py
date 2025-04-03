@@ -2,10 +2,11 @@ from view.file_video_panel import FileVideoPanel
 from PyQt5.QtWidgets import QVBoxLayout, QWidget, QScrollArea, QFrame, QLineEdit, QHBoxLayout, QLabel, QSizePolicy
 from PyQt5.QtCore import Qt, pyqtSignal
 
-from dvr import DVR
-from view.menu import Menu
-from player import Player
-from constants import DVR_WIDTH, DVR_HEIGHT, SEARCH_BAR_HEIGHT, SEARCH_BAR_WIDTH
+from model.dvr import DVR
+from view.menu_panel import MenuPanel
+from model.player import Player
+
+from assets.constants import DVR_WIDTH, DVR_HEIGHT, SEARCH_BAR_HEIGHT, SEARCH_BAR_WIDTH
 
 class DvrView(QWidget):
     show_home = pyqtSignal()
@@ -13,7 +14,7 @@ class DvrView(QWidget):
         super().__init__()
         self.dvr = DVR(directory)
         self.player = Player(directory)
-        self.menu = Menu(self.dvr.libraries)
+        self.menu = MenuPanel(self.dvr.libraries)
         self.file_video_panels = []
         self.current_playing_panel = None
         self.initUI()

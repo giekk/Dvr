@@ -1,6 +1,6 @@
 import os
 import csv
-from file_video import AVI, MP4, MKV, VOB
+from model.file_video import AVI, MP4, MKV, VOB
 
 class Database:
     def __init__(self, directory):

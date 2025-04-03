@@ -2,9 +2,9 @@ from PyQt5.QtWidgets import QLabel, QWidget, QPushButton, QFileDialog, QVBoxLayo
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt, pyqtSignal
 
-from constants import HOME_WIDTH, HOME_HEIGHT, LOAD_BUTTON_WIDTH, LOAD_BUTTON_HEIGHT
+from assets.constants import HOME_WIDTH, HOME_HEIGHT, LOAD_BUTTON_WIDTH, LOAD_BUTTON_HEIGHT
 
-class Home(QWidget):
+class HomeView(QWidget):
     to_dvr = pyqtSignal()
     def __init__(self):
         super().__init__()
@@ -34,11 +34,3 @@ class Home(QWidget):
     def load_video(self):
         self.directory = QFileDialog.getExistingDirectory(self, "Selezionare una cartella")
         self.to_dvr.emit()
-
-if __name__ == "__main__":
-    from PyQt5.QtWidgets import QApplication
-    app = QApplication([])
-    app.setApplicationName("File Video")
-    window = Home()
-    window.show()
-    app.exec_()

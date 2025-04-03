@@ -4,7 +4,7 @@ import time
 import threading
 from PyQt5.QtCore import QObject, pyqtSignal
 
-from constants import PLAYER_PATH
+from assets.constants import PLAYER_PATH
 
 class Player(QObject):
     stopped = pyqtSignal()
