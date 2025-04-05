@@ -5,7 +5,7 @@ from PyQt5.QtCore import Qt, QSize, pyqtSignal
 from model.file_video import AVI, MP4, MKV
 from model.visitor import IconVisitor
 
-from assets.constants import STANDARD_BUTTON_HEIGHT, STANDARD_BUTTON_WIDTH
+from assets.constants import Constants
 
 class FileVideoPanel(QWidget):
     riproduction = pyqtSignal(object)
@@ -34,8 +34,8 @@ class FileVideoPanel(QWidget):
                 background-color: #1e0c53;
             }
         ''')
-        self.play_button.setFixedHeight(STANDARD_BUTTON_HEIGHT)
-        self.play_button.setFixedWidth(STANDARD_BUTTON_WIDTH)
+        self.play_button.setFixedHeight(Constants.STANDARD_BUTTON_HEIGHT)
+        self.play_button.setFixedWidth(Constants.STANDARD_BUTTON_WIDTH)
         self.play_button.setCursor(Qt.PointingHandCursor)
         self.play_button.clicked.connect(self.play)
 

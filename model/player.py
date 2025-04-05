@@ -4,7 +4,7 @@ import time
 import threading
 from PyQt5.QtCore import QObject, pyqtSignal
 
-from assets.constants import PLAYER_PATH
+from assets.constants import Constants
 
 class Player(QObject):
     stopped = pyqtSignal()
@@ -23,7 +23,7 @@ class Player(QObject):
         if video_name in self.videos:
             video_path = os.path.join(self.directory, video_name)
             try:
-                player_path = PLAYER_PATH
+                player_path = Constants.PLAYER_PATH
                 self.process = subprocess.Popen([player_path, video_path], shell=True)
                 self.playing = True
                 threading.Thread(target=self.monitor_process).start()

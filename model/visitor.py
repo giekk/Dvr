@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QPixmap
 
-from assets.constants import FILE_AUDIO_IMG_HEIGHT, FILE_AUDIO_IMG_WIDTH
+from assets.constants import Constants  
 
 class Visitor(ABC):
     @abstractmethod
@@ -27,20 +27,20 @@ class IconVisitor(Visitor):
 
     def visitAVI(self, avi):
         avi.img_path = "icons/avi-icon.png"
-        self.icon.setPixmap(QPixmap(avi.img_path).scaled(FILE_AUDIO_IMG_WIDTH, FILE_AUDIO_IMG_HEIGHT))
+        self.icon.setPixmap(QPixmap(avi.img_path).scaled(Constants.FILE_AUDIO_IMG_WIDTH, Constants.FILE_AUDIO_IMG_HEIGHT))
     
     def visitMP4(self, mp4):
         mp4.img_path = "icons/mp4-icon.png"
-        self.icon.setPixmap(QPixmap(mp4.img_path).scaled(FILE_AUDIO_IMG_WIDTH, FILE_AUDIO_IMG_HEIGHT))
+        self.icon.setPixmap(QPixmap(mp4.img_path).scaled(Constants.FILE_AUDIO_IMG_WIDTH, Constants.FILE_AUDIO_IMG_HEIGHT))
     
     def visitMKV(self, mkv):
         mkv.img_path = "icons/mkv-icon.png"
-        self.icon.setPixmap(QPixmap(mkv.img_path).scaled(FILE_AUDIO_IMG_WIDTH, FILE_AUDIO_IMG_HEIGHT))
+        self.icon.setPixmap(QPixmap(mkv.img_path).scaled(Constants.FILE_AUDIO_IMG_WIDTH, Constants.FILE_AUDIO_IMG_HEIGHT))
 
     def visitMOV(self, mov):
         mov.img_path = "icons/mov-icon.png"
-        self.icon.setPixmap(QPixmap(mov.img_path).scaled(FILE_AUDIO_IMG_WIDTH, FILE_AUDIO_IMG_HEIGHT))
+        self.icon.setPixmap(QPixmap(mov.img_path).scaled(Constants.FILE_AUDIO_IMG_WIDTH, Constants.FILE_AUDIO_IMG_HEIGHT))
 
     def visitVOB(self, vob):
         vob.img_path = "icons/vob-icon.png"
-        self.icon.setPixmap(QPixmap(vob.img_path).scaled(FILE_AUDIO_IMG_WIDTH, FILE_AUDIO_IMG_HEIGHT))
+        self.icon.setPixmap(QPixmap(vob.img_path).scaled(Constants.FILE_AUDIO_IMG_WIDTH, Constants.FILE_AUDIO_IMG_HEIGHT))

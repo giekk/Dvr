@@ -3,7 +3,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, QSize, pyqtSignal
 from view.add_library_dialog import AddLibraryDialog
 
-from assets.constants import MENU_BUTTON_HEIGHT, MENU_BUTTON_WIDTH, STANDARD_BUTTON_WIDTH, STANDARD_BUTTON_HEIGHT
+from assets.constants import Constants
 
 class MenuPanel(QWidget):
     to_home = pyqtSignal()
@@ -26,7 +26,7 @@ class MenuPanel(QWidget):
 
         self.home_button = QPushButton()
         self.home_button.setIcon(QIcon('icons/home-icon.png'))
-        self.home_button.setIconSize(QSize(MENU_BUTTON_WIDTH, MENU_BUTTON_HEIGHT))
+        self.home_button.setIconSize(QSize(Constants.MENU_BUTTON_WIDTH, Constants.MENU_BUTTON_HEIGHT))
         self.home_button.setStyleSheet(' border: none; ')
         self.home_button.setCursor(Qt.PointingHandCursor)
         self.home_button.setToolTip('Home')
@@ -34,14 +34,14 @@ class MenuPanel(QWidget):
 
         self.categories_button = QPushButton()
         self.categories_button.setIcon(QIcon('icons/categories-icon.png'))
-        self.categories_button.setIconSize(QSize(MENU_BUTTON_WIDTH, MENU_BUTTON_HEIGHT))
+        self.categories_button.setIconSize(QSize(Constants.MENU_BUTTON_WIDTH, Constants.MENU_BUTTON_HEIGHT))
         self.categories_button.setStyleSheet('border: none;')
         self.categories_button.setCursor(Qt.PointingHandCursor)
         self.categories_button.setToolTip('Categorie')
 
         self.libraries_button = QPushButton()
         self.libraries_button.setIcon(QIcon('icons/libraries-icon.png'))
-        self.libraries_button.setIconSize(QSize(MENU_BUTTON_WIDTH, MENU_BUTTON_HEIGHT))
+        self.libraries_button.setIconSize(QSize(Constants.MENU_BUTTON_WIDTH, Constants.MENU_BUTTON_HEIGHT))
         self.libraries_button.setStyleSheet('border: none;')
         self.libraries_button.setCursor(Qt.PointingHandCursor)
         self.libraries_button.setToolTip('Librerie')
@@ -197,7 +197,7 @@ class MenuPanel(QWidget):
                 ' } '
                 )
         button.setCursor(Qt.PointingHandCursor)
-        button.setFixedSize(STANDARD_BUTTON_WIDTH, STANDARD_BUTTON_HEIGHT)
+        button.setFixedSize(Constants.STANDARD_BUTTON_WIDTH, Constants.STANDARD_BUTTON_HEIGHT)
         self.add_library_to_db.emit(button.text())
 
     def remove_library_from_widget(self, button, remove_button):
@@ -219,7 +219,7 @@ class MenuPanel(QWidget):
                 ' } '
                 )
             button.setCursor(Qt.PointingHandCursor)
-            button.setFixedSize(STANDARD_BUTTON_WIDTH, STANDARD_BUTTON_HEIGHT)
+            button.setFixedSize(Constants.STANDARD_BUTTON_WIDTH, Constants.STANDARD_BUTTON_HEIGHT)
 
     def on_button_clicked(self, button):
         if self.selected_button:

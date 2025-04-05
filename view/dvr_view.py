@@ -6,7 +6,7 @@ from model.dvr import DVR
 from view.menu_panel import MenuPanel
 from model.player import Player
 
-from assets.constants import DVR_WIDTH, DVR_HEIGHT, SEARCH_BAR_HEIGHT, SEARCH_BAR_WIDTH
+from assets.constants import Constants
 
 class DvrView(QWidget):
     show_home = pyqtSignal()
@@ -21,7 +21,7 @@ class DvrView(QWidget):
     
     def initUI(self):
         self.setStyleSheet('background-color: #2f1188; color: white;')
-        self.setMinimumSize(DVR_WIDTH, DVR_HEIGHT)
+        self.setMinimumSize(Constants.DVR_VIEW_WIDTH, Constants.DVR_VIEW_HEIGHT)
         layout = QVBoxLayout(self)
         layout.setAlignment(Qt.AlignCenter | Qt.AlignLeft)
 
@@ -36,8 +36,8 @@ class DvrView(QWidget):
 
         self.search_bar = QLineEdit()
         self.search_bar.setPlaceholderText('Cerca...')
-        self.search_bar.setFixedHeight(SEARCH_BAR_HEIGHT)
-        self.search_bar.setFixedWidth(SEARCH_BAR_WIDTH)
+        self.search_bar.setFixedHeight(Constants.SEARCH_BAR_HEIGHT)
+        self.search_bar.setFixedWidth(Constants.SEARCH_BAR_WIDTH)
         self.search_bar.setStyleSheet(
             ' background-color: #1e0c53; '
             ' border-radius: 8px; '

@@ -5,7 +5,7 @@ from view.home_view import HomeView
 from view.dvr_view import DvrView
 import ctypes
 
-from assets.constants import MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT, DVR_WIDTH, DVR_HEIGHT, HOME_HEIGHT, HOME_WIDTH
+from assets.constants import Constants
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -15,7 +15,7 @@ class MainWindow(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        self.setMinimumSize(HOME_WIDTH, HOME_HEIGHT)
+        self.setMinimumSize(Constants.HOME_VIEW_WIDTH, Constants.HOME_VIEW_HEIGHT)
         self.setWindowTitle("DVR")
         self.setWindowIcon(QIcon('icons/dvr-icon.ico'))
         self.setStyleSheet("QMainWindow { background: #2f1188; }")
@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
         if not self.dvr_view:
             self.dvr_view = DvrView(self.home.directory)
         self.layout.addWidget(self.dvr_view)
-        self.setMinimumSize(DVR_WIDTH, DVR_HEIGHT)
+        self.setMinimumSize(Constants.DVR_VIEW_WIDTH, Constants.DVR_VIEW_HEIGHT)
         self.dvr_view.show()
         self.dvr_view.show_home.connect(self.show_home_view)
 

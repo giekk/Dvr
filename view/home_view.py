@@ -2,19 +2,19 @@ from PyQt5.QtWidgets import QLabel, QWidget, QPushButton, QFileDialog, QVBoxLayo
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt, pyqtSignal
 
-from assets.constants import HOME_WIDTH, HOME_HEIGHT, LOAD_BUTTON_WIDTH, LOAD_BUTTON_HEIGHT
+from assets.constants import Constants
 
 class HomeView(QWidget):
     to_dvr = pyqtSignal()
     def __init__(self):
         super().__init__()
         self.setStyleSheet('background-color: #2f1188; color: white;')
-        self.setMinimumSize(HOME_WIDTH, HOME_HEIGHT)
+        self.setMinimumSize(Constants.HOME_VIEW_WIDTH, Constants.HOME_VIEW_HEIGHT)
         self.setWindowTitle('DVR')
         self.load_button = QPushButton("Seleziona cartella")
         self.load_button.clicked.connect(self.load_video)
-        self.load_button.setFixedHeight(LOAD_BUTTON_HEIGHT)
-        self.load_button.setFixedWidth(LOAD_BUTTON_WIDTH)
+        self.load_button.setFixedHeight(Constants.LOAD_BUTTON_HEIGHT)
+        self.load_button.setFixedWidth(Constants.LOAD_BUTTON_WIDTH)
         self.load_button.setStyleSheet('''
             QPushButton {
                 background-color: #1e0c53; 
