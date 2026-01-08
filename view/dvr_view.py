@@ -18,7 +18,7 @@ class DvrView(QWidget):
     
     def initUI(self):
         self.setStyleSheet('background-color: #2f1188; color: white;')
-        self.setMinimumSize(1400, 1000)
+        self.setMinimumSize(800, 500)
         layout = QVBoxLayout(self)
         layout.setAlignment(Qt.AlignCenter | Qt.AlignLeft)
 
@@ -29,12 +29,12 @@ class DvrView(QWidget):
 
         self.no_video_label = QLabel('Nessun video trovato')
         self.no_video_label.setAlignment(Qt.AlignCenter)
-        self.no_video_label.setStyleSheet('color: #2f1188; font-size: 50px;')
+        self.no_video_label.setStyleSheet('color: #2f1188; font-size: 20px;')
 
         self.search_bar = QLineEdit()
         self.search_bar.setPlaceholderText('Cerca...')
-        self.search_bar.setFixedHeight(40)
-        self.search_bar.setFixedWidth(600)
+        self.search_bar.setFixedHeight(20)
+        self.search_bar.setFixedWidth(300)
         self.search_bar.setStyleSheet(
             ' background-color: #1e0c53; '
             ' border-radius: 8px; '

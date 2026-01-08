@@ -28,7 +28,7 @@ class MainWindow(QMainWindow):
         ctypes.windll.dwmapi.DwmSetWindowAttribute(hwnd, DWMWA_TEXT_COLOR, ctypes.byref(ctypes.c_int(colorref)), ctypes.sizeof(ctypes.c_int))
     
     def initUI(self):
-        self.setMinimumSize(1000, 800)
+        self.setMinimumSize(500, 400)
         self.setWindowTitle("DVR")
         self.setWindowIcon(QIcon('icons/dvr-icon.ico'))
         self.setStyleSheet("QMainWindow { background: #2f1188; }")
@@ -59,7 +59,7 @@ class MainWindow(QMainWindow):
         if not self.dvr_view:
             self.dvr_view = DvrView(self.home.directory)
         self.layout.addWidget(self.dvr_view)
-        self.setMinimumSize(1600, 1100)
+        self.setMinimumSize(800, 500)
         self.dvr_view.show()
         self.dvr_view.show_home.connect(self.show_home_view)
 

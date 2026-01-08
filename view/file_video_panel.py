@@ -31,8 +31,8 @@ class FileVideoPanel(QWidget):
                 background-color: #1e0c53;
             }
         ''')
-        self.play_button.setFixedHeight(40)
-        self.play_button.setFixedWidth(120)
+        self.play_button.setFixedHeight(20)
+        self.play_button.setFixedWidth(80)
         self.play_button.setCursor(Qt.PointingHandCursor)
         self.play_button.clicked.connect(self.play)
 
@@ -40,7 +40,7 @@ class FileVideoPanel(QWidget):
         self.file_video.accept(visitor)
         self.icon = visitor.icon
         self.name = QLabel(self.file_video.name)
-        self.name.setStyleSheet('font-size: 30px;')
+        self.name.setStyleSheet('font-size: 15px;')
 
         self.frame = QFrame()
         self.frame.setFrameShape(QFrame.HLine)
@@ -56,6 +56,7 @@ class FileVideoPanel(QWidget):
         main_layout.addWidget(self.play_button)
         main_layout.addWidget(self.icon)
         main_layout.addWidget(self.name)
+        main_layout.addStretch()
         layout.addLayout(main_layout)
         layout.addWidget(self.frame)
 

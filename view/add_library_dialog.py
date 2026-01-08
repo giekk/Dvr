@@ -11,7 +11,7 @@ class AddLibraryDialog(QDialog):
     def initUI(self):
         self.setWindowTitle('Aggiungi Libreria')
         self.setStyleSheet('background-color: #2f1188; color: white;')
-        self.setMinimumSize(400, 200)
+        self.setMinimumSize(400, 100)
         layout = QVBoxLayout(self)
         layout.setAlignment(Qt.AlignCenter | Qt.AlignTop)
 
@@ -55,7 +55,7 @@ class AddLibraryDialog(QDialog):
                 ' } '
         )
         add_button.setCursor(Qt.PointingHandCursor)
-        add_button.setFixedSize(140, 40)
+        add_button.setFixedSize(80, 20)
 
         cancel_button.setStyleSheet(
             ' QPushButton { '
@@ -69,7 +69,7 @@ class AddLibraryDialog(QDialog):
                 ' } '
         )
         cancel_button.setCursor(Qt.PointingHandCursor)
-        cancel_button.setFixedSize(140, 40)
+        cancel_button.setFixedSize(80, 20)
 
         button_layout.addWidget(add_button)
         button_layout.addWidget(cancel_button)

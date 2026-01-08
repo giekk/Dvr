@@ -24,7 +24,7 @@ class Menu(QWidget):
 
         self.home_button = QPushButton()
         self.home_button.setIcon(QIcon('icons/home-icon.png'))
-        self.home_button.setIconSize(QSize(60, 60))
+        self.home_button.setIconSize(QSize(30, 30))
         self.home_button.setStyleSheet(' border: none; ')
         self.home_button.setCursor(Qt.PointingHandCursor)
         self.home_button.setToolTip('Home')
@@ -32,14 +32,14 @@ class Menu(QWidget):
 
         self.categories_button = QPushButton()
         self.categories_button.setIcon(QIcon('icons/categories-icon.png'))
-        self.categories_button.setIconSize(QSize(60, 60))
+        self.categories_button.setIconSize(QSize(30, 30))
         self.categories_button.setStyleSheet('border: none;')
         self.categories_button.setCursor(Qt.PointingHandCursor)
         self.categories_button.setToolTip('Categorie')
 
         self.libraries_button = QPushButton()
         self.libraries_button.setIcon(QIcon('icons/libraries-icon.png'))
-        self.libraries_button.setIconSize(QSize(60, 60))
+        self.libraries_button.setIconSize(QSize(30, 30))
         self.libraries_button.setStyleSheet('border: none;')
         self.libraries_button.setCursor(Qt.PointingHandCursor)
         self.libraries_button.setToolTip('Librerie')
@@ -195,7 +195,7 @@ class Menu(QWidget):
                 ' } '
                 )
         button.setCursor(Qt.PointingHandCursor)
-        button.setFixedSize(140, 40)
+        button.setFixedSize(80, 20)
         self.add_library_to_db.emit(button.text())
 
     def remove_library_from_widget(self, button, remove_button):
@@ -217,7 +217,7 @@ class Menu(QWidget):
                 ' } '
                 )
             button.setCursor(Qt.PointingHandCursor)
-            button.setFixedSize(140, 40)
+            button.setFixedSize(80, 20)
 
     def on_button_clicked(self, button):
         if self.selected_button:
