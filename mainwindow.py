@@ -65,6 +65,7 @@ class MainWindow(QMainWindow):
 
     def show_home_view(self):
         self.hide_current_view()
+        self.setMinimumSize(500, 400)
         self.layout.addWidget(self.home)
         self.home.show()
         self.home.to_dvr.connect(self.show_dvr_view)
